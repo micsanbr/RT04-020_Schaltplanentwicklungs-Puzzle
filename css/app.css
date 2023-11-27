@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+/* ################################################################ Disable double-tap to zoom on iOS ################################################################ */
+
+body {
+  touch-action: manipulation;
+}
+
+/* ################################################################ Header ################################################################ */
+
+header {
+  flex-wrap: nowrap;
+}
+
+header.module-header .header-top {
+  display: flex;
+  width: 100%;
+  flex-direction: inherit;
+  align-items: center;
+}
+
+header.module-header .fixed-container.state-hidden {
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+header.module-header .header-top .header-logo {
+  flex: 0 0 auto;
+  margin-left: 1em;
+}
+
+header.module-header .header-top .product-name {
+  flex: 1 1 auto;
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+header.module-header .header-top .product-version {
+  flex: 0 0 auto;
+  margin-left: 1em;
+}
+
+header.module-header .header-top .toolbar {
+  flex: 0 0 auto;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+header.module-header .header-top .toolbar .module-button {
+  position: relative;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ################################################################ Add to screen modal with button ################################################################ */
+
+#modal-add-to-home-screen.show.module-modal .modal-dialog {
+  position: fixed;
+  top: auto;
+  bottom: 40px;
+  right: 40px;
+  transform: inherit;
+}
+
+#modal-add-to-home-screen.show.module-modal.show .modal-dialog .modal-title {
+  margin-right: 1.5rem;
+}
+
+.ios-safari-share {
+  width: 50px;
+  height: 50px;
+}
+
+/* ################################################################ Library modal A ################################################################ */
+
+#modal-library-cards-a.module-modal .modal-dialog {
+  position: absolute;
+  max-width: none;
+  top: auto;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  transform: translate(0px, 0px) scale(0.9);
+}
+
+#modal-library-cards-a.module-modal.animate .modal-dialog {
+  bottom: 0px;
+  transform: translate(0px, 0px) scale(1);
+}
+
+/* ################################################################ Library modal B ################################################################ */
+
+#modal-library-cards-b.module-modal .modal-dialog {
+  position: absolute;
+  max-width: none;
+  top: 81px;
+  left: 0px;
+  bottom: auto;
+  right: 0px;
+  transform: translate(0px, 0px) scale(0.9);
+}
+
+#modal-library-cards-b.module-modal.animate .modal-dialog {
+  top: 81px;
+  transform: translate(0px, 0px) scale(1);
+}
+
+/* ################################################################ SVG selected areas ################################################################ */
+
+g[id^='card-'].active>rect[id^='drag-zone'] {
+  fill: var(--color-aqua) !important;
+  fill-opacity: 0.25 !important;
+}
+
+g[id^='drop-zone-'].active>rect {
+  fill: var(--color-aqua) !important;
+  fill-opacity: 0.25 !important;
+}
+
+/* ################################################################ SVG library ################################################################ */
+
+g[id^='card-']>rect[id^='drag-zone'] {
+  fill: #FFFFFF !important;
+}
+
+g[id^='card-a']>rect[id^='drag-zone'] {
+  stroke: #CCCCCC !important;
+  stroke-miterlimit: 10 !important;
+  stroke-dasharray: 16, 16 !important;
+}
+
+/* ################################################################ SVG viewport ################################################################ */
+
+g[id^='drop-zone-']>rect {
+  fill: #FFFFFF !important;
+  fill-opacity: 0.25 !important;
+  stroke: #CCCCCC !important;
+  stroke-miterlimit: 10 !important;
+  stroke-dasharray: 16, 16 !important;
+}
+
+/* ################################################################ Line mode ################################################################ */
+
+#line-mode {
+  border: 0;
+  transition: all 0.25s ease-out;
+  outline: 0.5rem solid transparent;
+  outline-offset: 3rem;
+}
+
+#line-mode.active {
+  outline-color: var(--color-aqua);
+  outline-offset: 0;
+}
